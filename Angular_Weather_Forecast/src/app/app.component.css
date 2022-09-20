@@ -1,0 +1,268 @@
+
+/* Styling for body */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background: url('..\assets\images\25501.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* **************************************************************************************************** */
+#canvas{
+    color:white;
+    overflow-y: hidden;
+}
+.search{
+    margin-bottom: 10px;
+}
+.search-block{
+    position: fixed;
+    padding: 10px;
+    margin: 10px 40px;
+    top:10px;
+    height: 170px;
+    width: 300px;
+    align-items: center;
+    background: rgba(24,24,27,0.5);
+    border-radius: 15px;
+    border: 1px white solid;
+}
+.search-input{
+    border: transparent;
+    width: 270px;
+    border-radius: 10px;
+    padding-inline-start: 5px;
+    border: 1px solid black;
+    position: fixed;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.search-input::placeholder{
+    text-align: center;
+}
+.search-box{
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 0%;
+    width: 60px;
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(5, 164, 5, 0.799);
+    position: fixed;
+    font-size: 15px;
+}
+.search-box:hover{
+    background-color: rgba(5, 164, 5, 0.5);
+}
+.search-box:active{
+    background-color: rgba(5, 164, 5, 1);
+}
+.search-button-block{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.coor-box{
+    position: relative;
+    width:129px;
+    border-radius: 10px;
+    border: transparent;
+    border: 1px solid black;
+    padding-inline: 3px;
+    margin-left: 5px;
+    font-size: 15px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.coor-box::placeholder{
+    text-align: center;
+}
+.get-location{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 150px;
+    height: 20px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-color: rgba(5, 164, 5, 0.799);
+}
+.get-location:hover{
+    background-color: rgba(5, 164, 5, 0.5);
+}
+.get-location:active{
+    background-color: rgba(5, 164, 5,1);
+    border: 1px solid rgba(5, 164, 5,1);
+}
+
+.btn-success{
+    padding-inline: 5px;
+    border: 1px solid rgba(10, 10, 10,0.6);
+    margin-top: 10px;
+}
+/* **************************************************************************************************** */
+
+label{
+    color: white;
+}
+.span{
+    font-size: 10px;
+}
+.location-label{
+    font-size: 20px;
+}
+
+.today{
+    position: fixed;
+    top:50%;
+    left:50%;
+}
+/********************Forecast********************************/
+.forecast{
+    padding: 30px;
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    width: 75%;  
+    justify-content: space-between;
+    height: 250px;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    right: 0px;
+}
+.Sort{
+    background-color: transparent;
+    position: fixed;
+    margin-bottom: 300px;
+    left:18%;
+    margin-left: 180px;
+    width: 50px;
+    border-radius: 50px;
+    border: 1px solid black;
+    height: 27px;
+}
+.Sort:hover{
+    background-color: rgba(0,0,0,0.4);
+}
+.Sort:active{
+    background-color: rgba(0,0,0,0.4);
+    border: 2px solid black;
+}
+.forecast-days{
+    display: flex;
+    padding: 5px 15px;
+    text-align: center;
+}
+.each-day{
+    margin: 10px 10px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    padding-inline: 20px;
+    background: rgba(24,24,27,0.5);
+    position: relative;
+}
+.each-day:hover{
+    background: rgba(24,24,27,0.8);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.forecast .forecast-days .date-day{
+    background-color: #3c3c44;
+    border-radius: 50px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.forecast-other{
+    font-size: 13px;
+    margin-bottom:10px;
+}
+.each{
+    display: flex;
+    justify-content: space-between;
+}
+/**************************Current Weather**********************************/
+
+.current-weather{
+    position: fixed;
+    padding: 10px 10px;
+    margin: 20px 0px;
+    width: 30%; 
+    overflow-y: hidden;
+    align-items: center;
+    height:55%;
+    left:3%;
+    top: 40%;
+    background: rgba(24,24,27,0.5);
+    border-radius: 15px;
+    width: 300px;
+    border: white 1px solid;
+}
+
+.current-weather:hover{
+    background: rgba(24,24,27,0.8);
+}
+
+.current-details{
+    display: flex;
+    justify-content: space-between;
+    color: #eee;
+    font-size: 12px;
+}
+.current-date-day{
+    padding: 5px 15px;
+    margin: 5px 0px;
+    background-color: #3c3c44;
+    border-radius: 50px;
+    text-align: center;
+    padding-inline: 5px;
+    color:#eee;
+    font-size: 15px;
+}
+.current-description{
+    color: #eee;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.current-weather-icon{
+    position: absolute;
+    top:15%;
+    left:15%;
+}
+
+.current-weather-other{
+   padding-top: 50%;
+   font-size: 13px;
+   color: #eee;
+   display: flex;
+   justify-content: space-between;
+}
+
+/****************************************************/
+.chart{
+    height: 320px;
+    width: 600px;
+    float: right;
+    margin: 15px 50px;
+    margin-right: 55px;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    text-align: center;
+    font-size: 13px;
+}
+
+
+

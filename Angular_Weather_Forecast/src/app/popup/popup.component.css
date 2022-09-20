@@ -1,0 +1,12 @@
+.message{
+ color: rgb(56, 55, 55);
+ font-size: 20px;
+ text-align: center;
+}
+.image{
+    width: auto;
+    height: auto;
+}
+.pop-up{
+    align-items: center;
+}

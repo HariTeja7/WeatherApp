@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>{{title}}</title>
+</head>
+
+<body>
+  <div>
+    <!-- Body started -->
+
+    <!-- Search for city, lat and log -->
+    <div class="search-block">
+      <label for="currentLocation"></label>
+      <input type="text" #incityName name="text" class="search-input" placeholder="Enter Location !" [value]="cityName" ngModel>
+      <pre></pre>
+      <div class="search">
+      <label for="Latitude" class="coor-label" ></label>
+      <input type="text" #inlat class="coor-box" placeholder="Enter Latitude" ngModel >
+      <span>
+      <label for="Longitude" class="coor-label"></label>
+      <input type="text" #inlon class="coor-box" placeholder="Enter Longitude" ngModel>
+      </span>
+      </div>
+      <pre></pre>
+      <div class="search-button-block">
+      <button type="button" class="btn btn-success" (click)="Search(incityName.value,inlat.value,inlon.value)"><mat-icon>search</mat-icon></button>
+      <pre></pre>
+      <button type="button" class="btn btn-success" (click)="getLocation()" >Get Current Location</button>
+      </div>
+    </div>
+
+    <!-- Five day weather forecast -->
+    <div class="forecast">
+      <button class="Sort" (click)="sort()"><mat-icon>repeat</mat-icon></button>
+      <div class="forecast-days">
+      <div *ngFor="let f of forecasts">
+          <div class="each-day">
+            <div class="date-day">
+              <div class="date">{{f.date}}</div>
+              <div class="day">{{f.day}}</div>
+            </div>
+            <img src={{f.iconUrl}} alt="weather icon" class="weather-icon">
+          <div class="forecast-other">
+            <div class="each"><mat-icon>brightness_high</mat-icon> {{f.temp}}&#176; C</div>
+            <div class="each"><mat-icon>bar_chart</mat-icon>{{f.pressure}} hPa</div>
+            <div class="each"><mat-icon> scatter_plot</mat-icon>{{f.humidity}} %</div>
+            <div class="each"><mat-icon>waves</mat-icon> {{f.windSpeed}} m/s</div>
+          </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Current-weather display -->
+    <div class="current-weather" *ngIf="display">
+
+      <div class="current-details">
+        <div class="current-place"><mat-icon> place</mat-icon>{{currentWeather.cityName}}</div>
+        <div class="UTC"><mat-icon>access_time</mat-icon> UTC {{currentWeather.timezone}}</div>
+      </div>
+
+      <div>
+          <div class="current-date-day">{{currentWeather.date}} {{currentWeather.day}}</div>
+          <!-- <div class="current-description">{{currentWeather.description}}</div> -->
+      </div>
+
+      <div class="current-weather-icon">
+        <img src="{{currentWeather.iconUrl}}">
+      </div>
+
+      <div class="current-weather-other">
+          <div>
+          <div class="each"><p class="current-description">{{currentWeather.description}}</p></div>
+          <div class="each"><mat-icon>brightness_high</mat-icon> <span>{{currentWeather.maxTemp}} &#176; C</span></div>
+          <div class="each"><mat-icon>cloud_queue</mat-icon> <p>{{currentWeather.minTemp}}&#176; C</p></div>
+        </div>
+        <div>
+          <div class="each"><mat-icon>bar_chart</mat-icon> <p>{{currentWeather.pressure}} hPa</p></div>
+          <div class="each"><mat-icon> scatter_plot</mat-icon> <p>{{currentWeather.humidity}} %</p></div>
+          <div class="each"><mat-icon>waves</mat-icon> <p>{{currentWeather.windSpeed}} m/s</p></div>
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="!display" class="current-weather">
+      <p><mat-icon>thumb_down</mat-icon></p>
+    </div>
+        <!-- Current-weather Chart -->
+       <div class="chart">
+          <canvas id="canvas"  baseChart [type]="'line'" [legend]="true" [datasets]="chartData" [labels]="chartLabels" [plugins]="lineChartPlugins" [options]="chartOptions" ></canvas>
+          <p class="x-axis">Time in 24 Hour Format --------------------></p>
+        </div>
+
+    <!-- Body ended -->
+    
+  </div>
+</body>
+</html> 
+ 

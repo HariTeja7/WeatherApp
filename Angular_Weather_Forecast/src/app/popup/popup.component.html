@@ -1,0 +1,10 @@
+<div class="pop-up">
+<div [ngSwitch]="data.id" class="image">
+    <img *ngSwitchCase="1" src='..\assets\images\search_empty.jpg' alt="popup icon" class="popup-icon">
+    <img *ngSwitchCase="2" src='..\assets\images\Dog_Searching_1.jpg' alt="popup icon" class="popup-icon">
+    <img *ngSwitchCase="3" src='..\assets\images\not_found.gif' alt="popup icon" class="popup-icon">
+</div>
+
+<div class="message">{{data.message}}</div>
+</div>
+
