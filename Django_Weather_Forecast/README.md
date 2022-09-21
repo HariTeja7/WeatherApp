@@ -8,4 +8,4 @@ Run `python manage.py runserver` for running the server. Navigate to localhost:8
 
 ## Running unit tests
 
-Run ` python manage.py tests.py ` in WeatherApp directory to execute the unit tests
+Run ` python manage.py test WeatherService ` in WeatherApp directory to execute the unit tests
